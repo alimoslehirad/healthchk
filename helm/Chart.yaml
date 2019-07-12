@@ -1,0 +1,12 @@
+name: toman-healthchk
+home: https://http://healthchk.qcluster.org/
+version: 0.0.1
+description: Toman alpha build from develop branch.
+sources:
+- https://hamgit.ir/alimoslehirad/generalhealthchecker
+maintainers:
+- name: Mohammad Mahzoun
+  email: mahzoun@tomanpay.net
+- name: Ali Moslehi Rad
+  email: alimoslehirad@gmail.com
+

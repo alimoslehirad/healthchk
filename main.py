@@ -1,14 +1,25 @@
 import threading
+from TelegramSend import TelegramSend
+from periodic_request_sender import Periodic_request_sender
 from server import ServerSide
 from URLFileRead import URLFileRead
-def service_test_timer():
-    url_read = URLFileRead()
-    url_read.service_test()
-    print("container is running")
-    timer = threading.Timer(2.0, service_test_timer)
-    timer.start()
-x = ServerSide()
-x.socketing()
+import cherrypy
+class Main:
+
+    @cherrypy.expose
+    def example(self):
+        index = open("indexformat.html").read().format(var1='goodbye',var2='goodbye',var3='goodbye',var4='goodbye',var5='goodbye',var6='goodbye')
+        return index
+# m = Main()
+# e=m.example()
+# f = open("index.html", "w")
+# f.write(e)
+# f.close()
+# y = TelegramSend()
+# # print(y.send())
+# x = ServerSide()
+# T1=Periodic_request_sender()
+# T1.start()
+# x.start()
 print("server is running")
-#service_test_timer()
-#print("timer start")
+
