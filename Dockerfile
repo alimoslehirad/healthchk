@@ -19,6 +19,7 @@ RUN pip install requests
 #RUN pip install threading
 RUN pip install telegram
 RUN pip install websocket-client
+RUN pip install cherrypy
 # Copying src code to Container
 #COPY . /k8s_production_mon/src/app
 

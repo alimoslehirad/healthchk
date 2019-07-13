@@ -7,9 +7,9 @@ from URLFileRead import URLFileRead
 import cherrypy
 class Main:
 
-    # x = ServerSide()
-    # T1=Periodic_request_sender()
-    # T1.start()
-    # x.start()
+    x = ServerSide()
+    T1=Periodic_request_sender()
+    T1.start()
+    x.start()
     print("server is running")
 
