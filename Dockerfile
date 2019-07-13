@@ -16,7 +16,9 @@ COPY URLs.txt /k8s_production_mon/files
 COPY . /k8s_production_mon/src
 #RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install requests
-#RUN pip install threading
+RUN pip install threading
+RUN pip install telegram
+RUN pip install websocket-client
 # Copying src code to Container
 #COPY . /k8s_production_mon/src/app
 
