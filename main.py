@@ -7,14 +7,9 @@ from URLFileRead import URLFileRead
 import cherrypy
 class Main:
 
-    # htmlPage=Html_manager()
-    # htmlPage.create_index
-    # htmlPage.write_index()
-    # y = TelegramSend()
-    # print(y.send())
-    x = ServerSide()
-    T1=Periodic_request_sender()
-    T1.start()
-    x.start()
+    # x = ServerSide()
+    # T1=Periodic_request_sender()
+    # T1.start()
+    # x.start()
     print("server is running")
 
