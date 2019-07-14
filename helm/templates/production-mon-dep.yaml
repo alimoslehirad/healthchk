@@ -23,7 +23,7 @@ spec:
             name: k8s-production-mon
       securityContext:
         runAsNonRoot: true
-        runAsUser: 65534
+        runAsUser: 65035
       volumes:
         - name: k8s-production-mon
           persistentVolumeClaim:

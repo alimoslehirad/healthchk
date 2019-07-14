@@ -1,4 +1,5 @@
 from html_manager import Html_manager
+from TelegramSend import TelegramSend
 import threading
 from URLFileRead import URLFileRead
 class Periodic_request_sender(threading.Thread):
@@ -9,5 +10,7 @@ class Periodic_request_sender(threading.Thread):
         request_list = url_read.service_test()
         self.html.write_index(request_list)
         print("container is running")
+        telegram = TelegramSend()
+        telegram.send()
         timer = threading.Timer(2.0, self.run)
         timer.start()

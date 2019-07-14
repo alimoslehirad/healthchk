@@ -6,7 +6,6 @@ from html_manager import  Html_manager
 from URLFileRead import URLFileRead
 import cherrypy
 class Main:
-
     x = ServerSide()
     T1=Periodic_request_sender()
     T1.start()
