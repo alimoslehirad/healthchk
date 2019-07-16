@@ -39,8 +39,7 @@ class TelegramSend:
         # Create the session and set the proxies.
         s = requests.Session()
         s.proxies = proxy
-        # s.auth = HTTPProxyAuth('kube','bloodsucker')
-        # logging.basicConfig(level=logging.DEBUG)
-        response=s.get(send_text )#, proxies=proxy)
+        # response=s.get(send_text )#, proxies=proxy)
+        response=requests.get(send_text, proxies=proxy)
         print(response.text)
         # return response.json()
