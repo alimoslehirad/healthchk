@@ -28,20 +28,19 @@ class TelegramSend:
         }
         # os.environ['http_proxy'] = 'http://kube:bloodsucker@proxy1.qcluster.org:3128'
         # os.environ['https_proxy'] = 'http://kube:bloodsucker@proxy1.qcluster.org:3128'
-        s = requests.Session()
-        s.proxies=proxy
-        r = s.get('http://www.google.com')  # OK
-        print(r.text)
-        session.trust_env = False
+        # s = requests.Session()
+        # s.proxies=proxy
+        # r = s.get('http://www.google.com')  # OK
+        # print(r.text)
+        # session.trust_env = False
         msg = 'ali'
         bot_chatID = '-328266093'
         send_text = 'https://api.telegram.org/bot' + self.token + '/sendMessage?chat_id=' + bot_chatID + '&text=' + msg
         # Create the session and set the proxies.
-        # s = requests.Session()
-        # s.proxies = proxy
+        s = requests.Session()
+        s.proxies = proxy
         # s.auth = HTTPProxyAuth('kube','bloodsucker')
         # logging.basicConfig(level=logging.DEBUG)
-        # response=s.get('http://www.showmemyip.com/' , proxies=proxy)
-        response=requests.get(send_text)
+        response=s.get(send_text )#, proxies=proxy)
         print(response.text)
         # return response.json()

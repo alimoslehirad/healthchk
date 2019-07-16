@@ -18,3 +18,5 @@ export MSG="test for toman-healthChk"
 #then
         curl -x $https_proxy -X GET "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage?chat_id=$TELEGRAM_GROUP&text=$MSG"
 	#fi
+
+	$cred = Get-Credential -Message 'Please enter your credentials for the proxy server.'

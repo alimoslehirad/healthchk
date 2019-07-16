@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: k8s-production-mon
+        k8s-app: k8s-production-mon
     spec:
       containers:
       - args:

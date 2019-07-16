@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    certmanager.k8s.io/acme-challenge-type: http01
+    certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+    kubernetes.io/ingress.class: nginx
+  creationTimestamp: 2019-07-13T14:54:07Z
+  generation: 1
+  name: production-mon-ingress
+  namespace: general-healthchk
+  resourceVersion: "27854091"
+  selfLink: /apis/extensions/v1beta1/namespaces/general-healthchk/ingresses/production-mon-ingress
+  uid: 10c72788-a57e-11e9-8e6b-ea3d275897c6
+spec:
+  rules:
+  - host: healthchk.qcluster.org
+    http:
+      paths:
+      - backend:
+          serviceName: k8s-production-mon
+          servicePort: 5035
+        path: /
+  tls:
+  - hosts:
+    - healthchk.qcluster.org
+    secretName: tls-healthchk
+status:
+  loadBalancer: {}
