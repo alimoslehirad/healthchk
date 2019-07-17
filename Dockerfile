@@ -29,12 +29,14 @@ ENV APP_ENV_URL1 https://mon.qcluster.org
 ENV APP_ENV_URL2 https://prometheus.qcluster.org
 ENV APP_ENV_URL3 https://alertmanager.qcluster.org
 
+RUN chmod  777 -R  /k8s_production_mon
 
 # Exposing Ports
 EXPOSE 5035
 
 # Setting Persistent data
 VOLUME ["/app-data"]
+RUN chmod  777 -R /app-data
 WORKDIR /k8s_production_mon/src
 # Running Python Application
 CMD ["python", "main.py"]

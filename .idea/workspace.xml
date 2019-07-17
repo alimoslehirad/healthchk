@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="525ab08c-7327-43aa-8003-2d7d84f36f81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramSend.py" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramSend.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +256,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3066089" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

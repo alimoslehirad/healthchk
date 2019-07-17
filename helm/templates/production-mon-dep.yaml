@@ -16,14 +16,16 @@ spec:
         name: k8s-production-mon
         image: alimoslehirad/k8s_production_mon:1.0
         imagePullPolicy: "IfNotPresent"
+        # command: ["sh", "-c", "chown -R 65035:65035 /app-data"]
         ports:
         - containerPort: 5035
         volumeMounts:
           - mountPath: /app-data
             name: k8s-production-mon
       securityContext:
-        runAsNonRoot: true
+        runAsNonRoot: false
         runAsUser: 65035
+        # serviceAccountName: healthchk
       volumes:
         - name: k8s-production-mon
           persistentVolumeClaim:
