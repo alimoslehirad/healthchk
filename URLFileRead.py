@@ -1,4 +1,3 @@
-import os
 import requests
 from requests.auth import HTTPBasicAuth
 class URLFileRead:
@@ -10,10 +9,7 @@ class URLFileRead:
         self.requestList=[]
 
     def service_test(self):
-        print(os.environ['HOME'])
-        print(os.environ['PATH'])
         self.f = open("URLs.txt")
-    # perform file operations
 
         requestAnswer=['','']
         while (self.var==1):
@@ -32,6 +28,7 @@ class URLFileRead:
 
             else:
                 requestAnswer = [self.url, 'Fail']
+
             self.requestList.append(requestAnswer)
         print("read end")
         print(self.requestList)

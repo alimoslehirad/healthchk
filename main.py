@@ -1,14 +1,16 @@
+from tinydb import TinyDB, Query
 import threading
 from TelegramSend import TelegramSend
-from periodic_request_sender import Periodic_request_sender
+from serviceTest import ServiceTest
 from server import ServerSide
 from html_manager import  Html_manager
 from URLFileRead import URLFileRead
 import cherrypy
 class Main:
+
     x = ServerSide()
-    T1=Periodic_request_sender()
-    T1.start()
+    T = ServiceTest()
+    T.start()
     x.start()
     print("server is running")
 

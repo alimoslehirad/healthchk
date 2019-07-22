@@ -23,7 +23,7 @@ spec:
           - mountPath: /app-data
             name: k8s-production-mon
       securityContext:
-        runAsNonRoot: false
+        runAsNonRoot: true
         runAsUser: 65035
         # serviceAccountName: healthchk
       volumes:
