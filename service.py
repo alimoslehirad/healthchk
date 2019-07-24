@@ -18,6 +18,10 @@ class Service:
         self.alerting_stop = True
         self.alerting_status = 'waiting to service up'
 
+    def make_alert_continue(self):
+        self.alerting_stop = False
+        self.alerting_status = 'active'
+
     def alerting_status_active(self):
         self.alerting_status = 'active'
 
@@ -31,6 +35,7 @@ class Service:
                     print("count greater than 2")
                     self.alert.alert_send("waiting to come up")
                     self.wait2upservice = True
+                    self.alert_count = 0
 
 
 

@@ -22,6 +22,7 @@ class Url(Service):
             self.alert_send(msg)
         if self.wait2upservice:
             if self.status == 'service is OK':
+                self.make_alert_continue()
                 msg = str(self.name + '  '+'is OK now')
                 self.alert_send(msg)
                 self.wait2upservice = False

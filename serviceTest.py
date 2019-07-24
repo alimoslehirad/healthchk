@@ -21,7 +21,7 @@ class ServiceTest(threading.Thread):
 
         for svc_obj in self.service_obj_list:
             svc_obj.test()
-        print("----------------------------------\n")
+        print("--------------------------------------\n")
         # status.define_status()
 
     def service_obj_creator(self):
