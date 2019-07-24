@@ -1,4 +1,5 @@
-https://mon.qcluster.org
-https://prometheus.qcluster.org
-https://alertmanager.qcluster.org
+https://mon.qcluster.org monitoring
+https://prometheus.qcluster.org prometheus
+https://alertmanager.qcluster.org alertmanager
+http://test.qcluster.org test_service
 end

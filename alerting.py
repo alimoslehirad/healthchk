@@ -1,20 +1,26 @@
-from tinydb import TinyDB, Query
-import requests
-from requests.auth import HTTPBasicAuth
+from TelegramSend import TelegramSend
 
 
-class ServiceStatus:
-    def __init__(self):
-        self.db = TinyDB('db2.json')
-        self.status = self.db.table('STATUS')
-        self.urlTable = self.db.table('URL')
+class Alerting:
 
-    def define_status(self):
-        statusQuery = Query()
+    telegram_send_flag = True
+    email_send_flag = False
+    slack_send_flag = False
+    telegram_send_obj = TelegramSend()
 
-        for i in range(3):
-            self.urlTable.search(statusQuery.Id == i)
+    def alert_send(self, msg):
+        self.telegram_send(msg)
+        self.email_send(msg)
+        self.slack_send(msg)
 
+    def telegram_send(self, msg):
+        if self.telegram_send_flag:
+            self.telegram_send_obj.send(msg)
 
+    def email_send(self, msg):
+        if self.email_send_flag:
+            pass
 
-
+    def slack_send(self, msg):
+        if self.slack_send_flag:
+            pass

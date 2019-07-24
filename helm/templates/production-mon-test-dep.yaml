@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-web-app
+  namespace: general-healthchk
+  labels:
+    k8s-app: k8s-web-app
+spec:
+  template:
+    metadata:
+      labels:
+        k8s-app: k8s-web-app
+    spec:
+      containers:
+      - args:
+        name: k8s-web-app
+        image: alimoslehirad/web
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 5037
+        volumeMounts:
+          - mountPath: /app-data
+            name: k8s-web-app
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65035
+      volumes:
+        - name: k8s-web-app
+          persistentVolumeClaim:
+            claimName: k8s-web-app
